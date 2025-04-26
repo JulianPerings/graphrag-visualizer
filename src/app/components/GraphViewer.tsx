@@ -867,6 +867,7 @@ const GraphViewer: React.FC<GraphViewerProps> = ({
           }}
         />
       )}
+      {/* ChangeIdentifier to show what was changed to optimize user experience when including Graphragvisualizer into the Graphrag-Chat-overlay
       <Box
         sx={{
           position: "absolute",
@@ -897,7 +898,7 @@ const GraphViewer: React.FC<GraphViewerProps> = ({
         >
           Clear Query Results
         </Button>
-      </Box>
+      </Box> */}
     </Box>
   );
 };

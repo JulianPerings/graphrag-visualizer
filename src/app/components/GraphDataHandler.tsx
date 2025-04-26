@@ -85,7 +85,7 @@ const GraphDataHandler: React.FC = () => {
         setTabIndex(0);
         break;
       case "/graph":
-        setTabIndex(1);
+        setTabIndex(0);
         break;
       case "/data":
         setTabIndex(2);
@@ -130,15 +130,29 @@ const GraphDataHandler: React.FC = () => {
   const toggleFullscreen = () => {
     setIsFullscreen(!isFullscreen);
   };
-
+  /*  ChangeIdentifier to show what was changed to optimize user experience when including Graphragvisualizer into the Graphrag-Chat-overlay
+        commented out following Tabs from return ( <> <Tabs value=... )
+        <Tab label="Upload Artifacts" />
+        <Tab label="Data Tables" />
+        
+        and tabIndex === 0  ->  1
+        and tabIndex === 1  ->  0
+        and       case "/graph":
+                    setTabIndex(1);
+                    break;
+                    ->
+                  case "/graph":
+                    setTabIndex(0);
+                    break;
+  */
   return (
     <>
       <Tabs value={tabIndex} onChange={handleChange} centered>
-        <Tab label="Upload Artifacts" />
+
         <Tab label="Graph Visualization" />
-        <Tab label="Data Tables" />
+
       </Tabs>
-      {tabIndex === 0 && (
+      {tabIndex === 1 && (
         <Container
           maxWidth="md"
           sx={{
@@ -151,7 +165,7 @@ const GraphDataHandler: React.FC = () => {
           <Introduction />
         </Container>
       )}
-      {tabIndex === 1 && (
+      {tabIndex === 0 && (
         <Box
           p={3}
           sx={{

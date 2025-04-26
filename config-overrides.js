@@ -3,5 +3,8 @@ module.exports = function override(config) {
     fs: false,
   };
 
+  config.stats = {
+    warningsFilter: [/Critical dependency: the request of a dependency is an expression/],
+  };
   return config;
 };
